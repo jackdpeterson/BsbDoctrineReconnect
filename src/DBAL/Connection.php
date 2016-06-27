@@ -192,9 +192,10 @@ class Connection extends DBALConnection
      */
     public function validateReconnectAttempt(DBALException $e, $attempt)
     {
+/** removing to test and see if this resolves the issue at hand
         if (!$this->getTransactionNestingLevel()) {
             return false;
-        }
+        }**/
 
         if ($this->reconnectAttempts && $attempt < $this->reconnectAttempts) {
             $reconnectExceptions = $this->_driver->getReconnectExceptions();
